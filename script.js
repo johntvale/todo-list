@@ -1,9 +1,12 @@
 const criarTarefa = document.querySelector('#criar-tarefa');
 const apagarLista = document.querySelector('#apaga-tudo');
+const limparCompletos = document.querySelector('#remover-finalizados');
 
 criarTarefa.addEventListener('click', criarElementoLista); // botão ADICIONAR cria LI
 
 apagarLista.addEventListener('click', apagarTodosItensLista); // botão LIMPAR LISTA remove todas as LI
+
+limparCompletos.addEventListener('click', apagarItensFinalizados); // botão LIMPAR LISTA remove todas as LI
 
 function criarElementoLista() { // CRIAR LIST ITEM
   const caixaInput = document.getElementById('texto-tarefa'); // caixa input
@@ -52,20 +55,26 @@ function adicionarConcluidoDoubleClick(adicionarRecebimentoDeDoubleClick) {
   const clicado2x = adicionarRecebimentoDeDoubleClick.target;
   if (clicado2x.className === 'corClicado') {
     clicado2x.classList.add('completed');
-    console.log('2');
   } else if (clicado2x.className === 'corClicado completed') {
     clicado2x.classList.remove('completed');
-    console.log('4');
   }
 }
 
 // remove todos as LI da lista OL
 function apagarTodosItensLista() {
-  // const lista = document.getElementById('lista-tarefas')
   const itensLista = document.querySelectorAll('li');
-  // const tamLista = document.querySelectorAll('li').length - 1;
-
   for (let index2 = 0; index2 < itensLista.length; index2 += 1) {
     itensLista[index2].remove();
+  }
+}
+
+function apagarItensFinalizados() {
+  const itensLista = document.querySelectorAll('li');
+  for (let index3 = 0; index3 < itensLista.length; index3 += 1) {
+    if (itensLista[index3].className === 'completed') {
+      itensLista[index3].remove();
+    } else if (itensLista[index3].className === 'corClicado completed') {
+      itensLista[index3].remove();
+    }
   }
 }
