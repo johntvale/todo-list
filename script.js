@@ -1,6 +1,9 @@
 const criarTarefa = document.querySelector('#criar-tarefa');
+const apagarLista = document.querySelector('#apaga-tudo');
 
-criarTarefa.addEventListener('click', criarElementoLista); // botão ADICIONAR CRIA List Item
+criarTarefa.addEventListener('click', criarElementoLista); // botão ADICIONAR cria LI
+
+apagarLista.addEventListener('click', apagarTodosItensLista); // botão LIMPAR LISTA remove todas as LI
 
 function criarElementoLista() { // CRIAR LIST ITEM
   const caixaInput = document.getElementById('texto-tarefa'); // caixa input
@@ -47,18 +50,22 @@ function adicionarRecebimentoDeDoubleClick() { // adiciona função de double cl
 // adiciona "corte no texto" caso receba 2 clicks, retirar caso receba 2 clicks novamente
 function adicionarConcluidoDoubleClick(adicionarRecebimentoDeDoubleClick) {
   const clicado2x = adicionarRecebimentoDeDoubleClick.target;
-  if (clicado2x.className === '') {
-    clicado2x.classList.add('completed');
-    console.log('1');
-  } else if (clicado2x.className === 'completed') {
-    clicado2x.classList.remove('completed');
-    console.log('3');
-  }
   if (clicado2x.className === 'corClicado') {
     clicado2x.classList.add('completed');
     console.log('2');
   } else if (clicado2x.className === 'corClicado completed') {
     clicado2x.classList.remove('completed');
     console.log('4');
+  }
+}
+
+// remove todos as LI da lista OL
+function apagarTodosItensLista() {
+  // const lista = document.getElementById('lista-tarefas')
+  const itensLista = document.querySelectorAll('li');
+  // const tamLista = document.querySelectorAll('li').length - 1;
+
+  for (let index2 = 0; index2 < itensLista.length; index2 += 1) {
+    itensLista[index2].remove();
   }
 }
