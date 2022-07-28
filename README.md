@@ -3,7 +3,7 @@
 
   O objetivo desse projeto é desenvolver uma Lista de Tarefas utilizando HTML, CSS e Javascript.
 
-  <br><br>Você pode acessá-lo <a href="index.html">clicando aqui :rocket:</a>.
+  Você pode acessá-lo <a href="index.html">clicando aqui :rocket:</a>.
 
 ---
 
