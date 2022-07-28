@@ -3,7 +3,7 @@
 
   O objetivo desse projeto é desenvolver uma Lista de Tarefas utilizando HTML, CSS e Javascript.
 
-  Você pode acessá-lo <a href="index.html">clicando aqui :rocket:</a>.
+  Você pode acessá-lo <a href="https://johntvale.github.io/todo-list/">clicando aqui :rocket:</a>.
 
 ---
 
