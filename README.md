@@ -18,6 +18,8 @@
 ### Habilidades desenvolvidas
 - Manipular o DOM
 - Manipular Javascript.
+- Trabalhar com Listas Html
+- Adicionar/Remover elementos da página web
 
 ---
 
